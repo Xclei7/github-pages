@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Chave Pix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .chave {
+            font-size: 20px;
+            font-weight: bold;
+            background: #f3f3f3;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #008000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #006600;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Copie a Chave Pix</h2>
+    <div class="chave" id="chavePix">42151545000149</div><br>
+    <button onclick="copiarPix()">Copiar Chave</button>
+
+    <script>
+        function copiarPix() {
+            const chave = document.getElementById("chavePix").innerText;
+            navigator.clipboard.writeText(chave).then(() => {
+                alert("Chave Pix copiada!");
+            }).catch(err => {
+                alert("Erro ao copiar: " + err);
+            });
+        }
+    </script>
+
+</body>
+</html>
